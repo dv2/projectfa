@@ -1,0 +1,15 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+  function drawChart() {
+    var data = google.visualization.arrayToDataTable(<%= chart_data.inspect.html_safe %>);
+
+    var options = {
+      title: <%= title.inspect.html_safe %>
+    };
+
+    var chart = new google.visualization.PieChart(document.getElementById(<%= container.inspect.html_safe %>));
+    chart.draw(data, options);
+  }
+</script>
