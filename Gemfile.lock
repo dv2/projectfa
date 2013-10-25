@@ -45,6 +45,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     columnize (0.3.6)
+    country_select (1.2.0)
     debugger (1.6.2)
       columnize (>= 0.3.1)
       debugger-linecache (~> 1.2.0)
@@ -145,6 +146,7 @@ DEPENDENCIES
   bootstrap-sass
   capybara (~> 2.1.0)
   coffee-rails (~> 4.0.0)
+  country_select
   debugger
   jbuilder (~> 1.2)
   jquery-rails

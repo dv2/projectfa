@@ -22,3 +22,4 @@ end
 
 gem 'awesome_print'
 gem 'bootstrap-sass'
+gem 'country_select'
