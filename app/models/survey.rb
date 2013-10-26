@@ -1,5 +1,14 @@
 class Survey < ActiveRecord::Base
   validates :pick, presence: true
+  validates :gender, presence: true
+  validates :year_of_birth, presence: true
+  validates :country, presence: true
+  validates :india_state, presence: true, if: :india?
+  validates :ap_district, presence: true, if: :india?
+
+  def india?
+    self.country == 'India'
+  end
 
   def self.overall
     out = []

@@ -42,17 +42,19 @@
           </div>
         </div>
 
-        <div class='control-group'>
-          <%= f.label :ap_district, 'Andhra District', :class => 'control-label' %>
-          <div class="controls">
-            <%= f.select :ap_district, ap_districts, prompt: 'Select District' %>
+        <div id="state_district_section">
+          <div class='control-group'>
+            <%= f.label :india_state, 'India State', :class => 'control-label' %>
+            <div class="controls">
+              <%= f.select :india_state, india_states, prompt: 'Select State' %>
+            </div>
           </div>
-        </div>
 
-        <div class='control-group'>
-          <%= f.label :india_state, 'India State', :class => 'control-label' %>
-          <div class="controls">
-            <%= f.select :india_state, india_states, prompt: 'Select State' %>
+          <div class='control-group'>
+            <%= f.label :ap_district, 'Andhra District', :class => 'control-label' %>
+            <div class="controls">
+              <%= f.select :ap_district, ap_districts, prompt: 'Select District' %>
+            </div>
           </div>
         </div>
 
