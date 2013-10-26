@@ -13,9 +13,10 @@
       <div class="jumbotron" style="background-color: #eeeeee">
         <h1>Andhra Vs Telangana!</h1>
         <p class="lead">
-          We have been collecting the opinion of the people regarding United Andhra or Separate Telangana and here is the information we collected so far.
+          We have been collecting the opinion of the people regarding United Andhra or Separate Telangana and here is the information we've collected so far.
           <br />
-          <b>Please vote by clicking the below button and let us know your opinion.</b>
+          <b>Your opinion counts! Please vote and let your voice be heard.</b> (It only takes 20 secs.)
+          <p>here is facebook like button</p>
         </p>
         <p>
           <%= link_to 'Vote by clicking here!', new_survey_path, class: 'btn btn-lg btn-success' %>
@@ -24,7 +25,7 @@
 
       <div class="content">
         <% flash.each do |key, value| %>
-          <p><%= value %></p>
+          <div class="alert alert-<%= key %>"><%= value %></div>
         <% end %>
         <%= yield %>
       </div>
