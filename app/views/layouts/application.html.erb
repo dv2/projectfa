@@ -9,7 +9,29 @@
   <body>
 
     <div class="container">
-      <%= yield %>
+
+      <div class="jumbotron" style="background-color: #eeeeee">
+        <h1>Andhra Vs Telangana!</h1>
+        <p class="lead">
+          We have been collecting the opinion of the people regarding United Andhra or Separate Telangana and here is the information we collected so far.
+          <br />
+          <b>Please vote by clicking the below button and let us know your opinion.</b>
+        </p>
+        <p>
+          <%= link_to 'Vote by clicking here!', new_survey_path, class: 'btn btn-lg btn-success' %>
+        </p>
+      </div>
+
+      <div class="content">
+        <% flash.each do |key, value| %>
+          <p><%= value %></p>
+        <% end %>
+        <%= yield %>
+      </div>
+
+      <div class="footer">
+        <p>&copy; WaltApps <%= Date.today.year %></p>        
+      </div>
     </div>
 
   </body>

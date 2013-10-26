@@ -12,4 +12,6 @@
     var chart = new google.visualization.PieChart(document.getElementById(<%= container.inspect.html_safe %>));
     chart.draw(data, options);
   }
+
+  $(document).on('page:load', drawChart);
 </script>
