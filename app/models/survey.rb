@@ -1,4 +1,6 @@
 class Survey < ActiveRecord::Base
+  belongs_to :user
+
   validates :pick, presence: true
   validates :gender, presence: true
   validates :year_of_birth, presence: true
