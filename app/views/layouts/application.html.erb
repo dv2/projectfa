@@ -13,8 +13,9 @@
         <ul class="nav nav-pills pull-right">
           <li><%= link_to 'Home', root_path %></li>
           <% if user_signed_in? %>
-            <li><!-- Logged in as <strong><%= current_user.email %></strong>. -->
-            <%= link_to 'Edit profile', edit_user_registration_path %></li>
+<!--             <li>Logged in as <strong><%= current_user.email %></strong>.
+            <%= link_to 'Edit profile', edit_user_registration_path %></li> -->
+            <li style="padding-top: 8px"><b><%= display_logged_in_info %></b></li>
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %><li>
           <% else %>
             <li><%= link_to "Sign up", new_user_registration_path %></li>
