@@ -1,73 +1,75 @@
 <% provide(:title, "FutureAndhra.com - Survey Page") %>
 
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-8">
+<% unless current_user.survey %>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
 
-    <h2>Tell us your opinion!</h2>
-    <%= form_for @survey, :html => { :class => 'form-horizontal' } do |f| %>
-      <fieldset>
-        <%= render 'common/form_errors', object: @survey %>
+      <h2>Tell us your opinion!</h2>
+      <%= form_for @survey, :html => { :class => 'form-horizontal' } do |f| %>
+        <fieldset>
+          <%= render 'common/form_errors', object: @survey %>
 
-        <div class="radio-inline-class">
-          <div class='control-group'>
-            <label class="radio-inline">
-              <%= f.radio_button :pick, "United" %>United Andhra State
-            </label>
-            <label class="radio-inline">
-              <%= f.radio_button :pick, "Separate" %>Separate Telangana State
-            </label>
-            <label class="radio-inline">
-              <%= f.radio_button :pick, "None" %>Does not matter
-            </label>
-          </div>
-        </div>
-
-        <div class='control-group'>
-          <%= f.label :gender, :class => 'control-label' %>
-          <div class="controls">
-            <%= f.select :gender, ['Male', 'Female'], prompt: 'Select Gender' %>
-          </div>
-        </div>
-
-        <div class='control-group'>
-          <%= f.label :year_of_birth, "Year Of Birth", :class => 'control-label' %>
-          <div class="controls">
-            <%= f.select :year_of_birth, years, prompt: 'Select Year' %>
-          </div>
-        </div>
-
-        <div class='control-group'>
-          <%= f.label :country, 'Country of Residence', :class => 'control-label' %>
-          <div class="controls">
-            <%= f.select :country, countries, prompt: 'Select Country' %>
-          </div>
-        </div>
-
-        <div id="state_district_section">
-          <div class='control-group'>
-            <%= f.label :india_state, 'India State', :class => 'control-label' %>
-            <div class="controls">
-              <%= f.select :india_state, india_states, prompt: 'Select State' %>
+          <div class="radio-inline-class">
+            <div class='control-group'>
+              <label class="radio-inline">
+                <%= f.radio_button :pick, "United" %>United Andhra State
+              </label>
+              <label class="radio-inline">
+                <%= f.radio_button :pick, "Separate" %>Separate Telangana State
+              </label>
+              <label class="radio-inline">
+                <%= f.radio_button :pick, "None" %>Does not matter
+              </label>
             </div>
           </div>
 
           <div class='control-group'>
-            <%= f.label :ap_district, 'Andhra District', :class => 'control-label' %>
+            <%= f.label :gender, :class => 'control-label' %>
             <div class="controls">
-              <%= f.select :ap_district, ap_districts, prompt: 'Select District' %>
+              <%= f.select :gender, ['Male', 'Female'], prompt: 'Select Gender' %>
             </div>
           </div>
-        </div>
 
-        <div class="form-actions">
-          <%= f.submit 'Submit', :class => 'btn btn-primary' %>
-        </div>
-      </fieldset>
-    <% end %>
+          <div class='control-group'>
+            <%= f.label :year_of_birth, "Year Of Birth", :class => 'control-label' %>
+            <div class="controls">
+              <%= f.select :year_of_birth, years, prompt: 'Select Year' %>
+            </div>
+          </div>
 
+          <div class='control-group'>
+            <%= f.label :country, 'Country of Residence', :class => 'control-label' %>
+            <div class="controls">
+              <%= f.select :country, countries, prompt: 'Select Country' %>
+            </div>
+          </div>
+
+          <div id="state_section">
+            <div class='control-group'>
+              <%= f.label :india_state, 'India State', :class => 'control-label' %>
+              <div class="controls">
+                <%= f.select :india_state, india_states, prompt: 'Select State' %>
+              </div>
+            </div>
+          </div>
+
+          <div id="district_section">
+            <div class='control-group'>
+              <%= f.label :ap_district, 'Andhra District', :class => 'control-label' %>
+              <div class="controls">
+                <%= f.select :ap_district, ap_districts, prompt: 'Select District' %>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <%= f.submit 'Submit', :class => 'btn btn-primary' %>
+          </div>
+        </fieldset>
+      <% end %>
+
+    </div>
+    <div class="col-md-2"></div>
   </div>
-  <div class="col-md-2"></div>
-</div>
-
-
+<% end %>

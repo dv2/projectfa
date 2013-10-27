@@ -6,10 +6,14 @@ class Survey < ActiveRecord::Base
   validates :year_of_birth, presence: true
   validates :country, presence: true
   validates :india_state, presence: true, if: :india?
-  validates :ap_district, presence: true, if: :india?
+  validates :ap_district, presence: true, if: :ap_state?
 
   def india?
     self.country == 'India'
+  end
+
+  def ap_state?
+    self.india_state == 'Andhra Pradesh'
   end
 
   def self.overall
