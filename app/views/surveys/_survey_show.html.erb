@@ -1,14 +1,14 @@
 <p style="font-color: green">
   <b>
     <% survey = current_user.survey %>
-    You have voted for : <%= survey_pick(survey.pick) %> <br />
-    Your Gender: <%= survey.gender %><br />
-    Your Year of birth: <%= survey.year_of_birth %><br />
-    Your Country: <%= survey.country %><br />
+    You have voted for : <%= survey_pick(survey.pick) %> | 
+    Gender: <%= survey.gender %> | 
+    Year of birth: <%= survey.year_of_birth %> | 
+    Country: <%= survey.country %>
     <% if survey.country == 'India' %>
-      Your State: <%= survey.india_state %><br />
+      | State: <%= survey.india_state %>
       <% if survey.india_state == 'Andhra Pradesh' %>
-        Your AP District: <%= survey.ap_district %><br />
+        | AP District: <%= survey.ap_district %>
       <% end %>
     <% end %>
   </b>
