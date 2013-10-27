@@ -31,6 +31,8 @@ group :production do
 end
 
 gem 'awesome_print'
-gem 'bootstrap-sass'
 gem 'country_select'
 gem 'devise'
+
+gem 'bootstrap-sass', '~> 3.0.0.0.rc'
+# gem "bootstrap-sass", "~> 2.3.2.2"
