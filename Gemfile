@@ -36,3 +36,5 @@ gem 'devise'
 
 gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 # gem "bootstrap-sass", "~> 2.3.2.2"
+
+gem 'omniauth-facebook'

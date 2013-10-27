@@ -19,5 +19,8 @@ module Futureandhra
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    ENV['FACEBOOK_APP_ID'] = '659970240703311'
+    ENV['FACEBOOK_SECRET'] = '31a4779ae62521311bb971e987723675'
   end
 end
