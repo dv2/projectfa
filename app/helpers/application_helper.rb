@@ -15,4 +15,8 @@ module ApplicationHelper
       "Logged in via Facebook: #{current_user.p_nickname}"
     end
   end
+
+  def sign_in_with_facebook
+    link_to "Sign in with facebook", omniauth_authorize_path(resource_name, :facebook)
+  end
 end
