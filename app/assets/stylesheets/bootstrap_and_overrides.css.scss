@@ -3,6 +3,15 @@
 // @import "justified-nav";
 
 body { padding-top: 10px; }
-// .container {
-//   max-width: 1300px;
-// }
+.container {
+  max-width: 1300px;
+  padding: 30px;
+}
+
+.jumbotron {
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding: 10px;
+}
