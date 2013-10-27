@@ -17,4 +17,15 @@ module SurveysHelper
     CountrySelect::COUNTRIES.values
     ["India", "United States"] + CountrySelect::COUNTRIES.values
   end
+
+  def survey_pick(pick)
+    case pick
+    when 'United'
+      'United Andhra'
+    when 'Separate'
+      'Separate Telangana State'
+    else
+      'Does Not Matter'
+    end
+  end
 end

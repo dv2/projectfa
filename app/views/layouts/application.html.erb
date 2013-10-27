@@ -29,12 +29,16 @@
         <p class="lead">
           We have been collecting the opinion of the people regarding United Andhra or Separate Telangana and here is the information we've collected so far.
           <br />
-          <b>Your opinion counts! Please vote and let your voice be heard.</b> (It only takes 20 secs.)
+          <b>Your opinion counts! Please vote and let your voice be heard.</b> 
+          <br />(It only takes 30 secs for you to vote.)
           <p>here is facebook like button</p>
         </p>
-        <p>
-          <%= link_to 'Vote by clicking here!', new_survey_path, class: 'btn btn-lg btn-success' %>
-        </p>
+
+        <% if current_user && already_voted? %>
+          <%= render 'surveys/survey_show' %>
+        <% else %>
+          <p><%= link_to 'Vote by clicking here!', new_survey_path, class: 'btn btn-lg btn-success' %></p>
+        <% end %>
       </div>
 
       <div class="content">
