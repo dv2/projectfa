@@ -39,7 +39,9 @@ gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 
 gem 'omniauth-facebook'
 
-# memcachier
+# memcachier addon
 gem 'memcachier'
 gem 'dalli'
 
+# sentry addon
+gem 'sentry-raven'
