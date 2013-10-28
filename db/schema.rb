@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028022620) do
+ActiveRecord::Schema.define(version: 20131028040421) do
+
+  create_table "activities", force: true do |t|
+    t.string   "action"
+    t.string   "request_remote_ip"
+    t.string   "context"
+    t.string   "http_user_agent"
+    t.string   "http_host"
+    t.string   "http_referer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "ap_districts", force: true do |t|
     t.string   "name"
