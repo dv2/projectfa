@@ -77,4 +77,28 @@ namespace :data do
       IndiaState.create(name: name)
     end
   end
+
+  desc 'create survey'
+  task :create_survey => :environment do
+
+    1.times do
+      pick = ['United', 'United', 'United', 'United', 'Separate', 'Separate', 'Separate', 'Separate', 'None'][rand(9)]
+      gender = ['Male', 'Female'][rand(2)]
+      year_of_birth = 1990
+      country = ['India', 'India', 'India', 'India', 'United States', 'United States', 'United Kingdom'][rand(7)]
+      state = ['Andhra Pradesh', 'Andhra Pradesh', 'Andhra Pradesh', 'Gujarat'][rand(4)]
+      district = ['Hyderabad', 'Krishna'][rand(2)]
+
+      Survey.create(
+        pick: pick,
+        gender: gender,
+        year_of_birth: year_of_birth,
+        country: country,
+        india_state: state,
+        ap_district: district,
+        user_id: 1
+        )
+    end
+
+  end
 end

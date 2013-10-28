@@ -18,7 +18,7 @@ class Survey < ActiveRecord::Base
 
   def self.overall
     out = []
-    out << ['x', 'y']
+    out << ['x', 'Votes']
     num = Survey.where(pick: 'United').count
     out << ['United', num]
     num = Survey.where(pick: 'Separate').count
