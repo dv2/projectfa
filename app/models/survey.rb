@@ -45,4 +45,82 @@ class Survey < ActiveRecord::Base
 
     out
   end
+
+  def self.country_data_india
+    out = []
+    out << ['x', 'Votes']
+
+    country = 'India'
+
+    num = Survey.where(country: country, pick: 'United').count
+    out << ['United', num]
+
+    num = Survey.where(country: country, pick: 'Separate').count
+    out << ['Separate', num]
+
+    num = Survey.where(country: country, pick: 'None').count
+    out << ['Does Not Matter', num]
+
+    out
+  end
+
+  def self.country_data_not_india
+    out = []
+    out << ['x', 'Votes']
+
+    country = 'India'
+
+    total = Survey.where(pick: 'United').count
+    num = Survey.where(country: country, pick: 'United').count
+    out << ['United', total - num]
+
+    total = Survey.where(pick: 'Separate').count
+    num = Survey.where(country: country, pick: 'Separate').count
+    out << ['Separate', total - num]
+
+    total = Survey.where(pick: 'None').count
+    num = Survey.where(country: country, pick: 'None').count
+    out << ['Does Not Matter', total - num]
+
+    out
+  end
+
+  def self.state_data_ap
+    out = []
+    out << ['x', 'Votes']
+
+    india_state = 'Andhra Pradesh'
+
+    num = Survey.where(india_state: india_state, pick: 'United').count
+    out << ['United', num]
+
+    num = Survey.where(india_state: india_state, pick: 'Separate').count
+    out << ['Separate', num]
+
+    num = Survey.where(india_state: india_state, pick: 'None').count
+    out << ['Does Not Matter', num]
+
+    out
+  end
+
+  def self.state_data_not_ap
+    out = []
+    out << ['x', 'Votes']
+
+    india_state = 'Andhra Pradesh'
+
+    total = Survey.where(pick: 'United').count
+    num = Survey.where(india_state: india_state, pick: 'United').count
+    out << ['United', total - num]
+
+    total = Survey.where(pick: 'Separate').count
+    num = Survey.where(india_state: india_state, pick: 'Separate').count
+    out << ['Separate', total - num]
+
+    total = Survey.where(pick: 'None').count
+    num = Survey.where(india_state: india_state, pick: 'None').count
+    out << ['Does Not Matter', total - num]
+
+    out
+  end
 end

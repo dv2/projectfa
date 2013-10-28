@@ -32,23 +32,40 @@
 </div>
 
 
-<div class='row' style="text-align: center"><h2>By District</h2></div>
+<div class='row' style="text-align: center"><h2>By Country</h2></div>
+<div class='row-fluid'>
+  <div class='span6'>
+    <div id="piechart_country_india" style="width: 500px; height: 300px;"></div>
+    <%= render 'common/piechart', 
+          chart_data: @piechart_country_india, 
+          container: 'piechart_country_india',
+          title: 'Within India'  %>
+  </div>
+  <div class='span6'>
+    <div id="piechart_country_not_india" style="width: 500px; height: 300px;"></div>
+    <%= render 'common/piechart', 
+          chart_data: @piechart_country_not_india, 
+          container: 'piechart_country_not_india',
+          title: 'Outside India'  %>
+  </div>
+</div>
 
-<div id="piechart_district" style="width: 500px; height: 300px;"></div>
-<%= render 'common/piechart', 
-      chart_data: @piechart_district_data, 
-      container: 'piechart_district',
-      title: 'By District'  %>
 
-<div id="piechart_state" style="width: 500px; height: 300px;"></div>
-<%= render 'common/piechart', 
-      chart_data: @piechart_state_data, 
-      container: 'piechart_state',
-      title: 'By State'  %>
-
-<div id="piechart_country" style="width: 500px; height: 300px;"></div>
-<%= render 'common/piechart', 
-      chart_data: @piechart_country_data, 
-      container: 'piechart_country',
-      title: 'By Country'  %>
+<div class='row' style="text-align: center"><h2>By State</h2></div>
+<div class='row-fluid'>
+  <div class='span6'>
+    <div id="piechart_state_andhra_pradesh" style="width: 500px; height: 300px;"></div>
+    <%= render 'common/piechart', 
+          chart_data: @piechart_state_andhra_pradesh, 
+          container: 'piechart_state_andhra_pradesh',
+          title: 'People from Andhra Pradesh'  %>
+  </div>
+  <div class='span6'>
+    <div id="piechart_state_not_andhra_pradesh" style="width: 500px; height: 300px;"></div>
+    <%= render 'common/piechart', 
+          chart_data: @piechart_state_not_andhra_pradesh, 
+          container: 'piechart_state_not_andhra_pradesh',
+          title: 'People Outside Andhra Pradesh'  %>
+  </div>
+</div>
 
