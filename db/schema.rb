@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131027182150) do
+ActiveRecord::Schema.define(version: 20131028022620) do
 
   create_table "ap_districts", force: true do |t|
     t.string   "name"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20131027182150) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "text"
   end
 
   add_index "surveys", ["user_id"], name: "index_surveys_on_user_id"
