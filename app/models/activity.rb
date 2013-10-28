@@ -5,6 +5,14 @@ class Activity < ActiveRecord::Base
     action = "#{params['controller']}-#{params['action']}"
     user_id = current_user ? current_user.id : nil
 
+    logger.info "action           : #{action}"
+    logger.info "request_remote_ip: #{request.remote_ip}"
+    logger.info "context          : #{params.to_s}"
+    logger.info "http_user_agent  : #{request.env['HTTP_USER_AGENT']}"
+    logger.info "http_host        : #{request.env['HTTP_HOST']}"
+    logger.info "http_referer     : #{request.env['HTTP_REFERER']}"
+    logger.info "user_id          : #{user_id}"
+
     Activity.create(action: action,
                     request_remote_ip: request.remote_ip,
                     context: params.to_s,
