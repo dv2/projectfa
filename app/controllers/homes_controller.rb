@@ -15,6 +15,6 @@ class HomesController < ApplicationController
     # @piechart_district_andhra = Survey.district_data_andhra
     # @piechart_district_telangana = Survey.district_data_not_andhra
 
-    Activity.create_activity(request, params)
+    Activity.create_activity(request, params, current_user)
   end
 end

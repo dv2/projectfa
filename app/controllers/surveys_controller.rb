@@ -3,14 +3,14 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
-    Activity.create_activity(request, params)
+    Activity.create_activity(request, params, current_user)
   end
 
   def create
     @survey = Survey.new(survey_params)
     @survey.user = current_user
     if @survey.save
-      Activity.create_activity(request, params)
+      Activity.create_activity(request, params, current_user)
       flash[:success] = 'Thanks for submitting your choice.'
       redirect_to root_path
     else
