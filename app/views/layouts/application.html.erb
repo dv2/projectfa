@@ -40,7 +40,8 @@
         <% if current_user && already_voted? %>
           <%= render 'surveys/survey_show' %>
         <% else %>
-          <p><%= link_to 'Vote by clicking here!', new_survey_path, class: 'btn btn-lg btn-success' %></p>
+          <!-- <p><%= link_to 'Vote by clicking here!', new_survey_path, class: 'btn btn-lg btn-success' %></p> -->
+          <p><%= link_to 'Vote by clicking here!', new_user_registration_path, class: 'btn btn-lg btn-success' %></p>
         <% end %>
       </div>
 
