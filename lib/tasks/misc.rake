@@ -96,7 +96,8 @@ namespace :data do
         country: country,
         india_state: state,
         ap_district: district,
-        user_id: 1
+        user_id: 1,
+        text: 'dvcreate'
         )
     end
 
