@@ -1,0 +1,47 @@
+<table class="table table-condensed table-hover" style="width: 30%">
+  <thead>
+    <tr>
+      <th>Table</th>
+      <th>Count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>User</td>
+      <td><%= @total_users %></td>
+    </tr>
+    <tr>
+      <td>Survey</td>
+      <td><%= @total_surveys %></td>
+    </tr>
+    <tr>
+      <td>Activity</td>
+      <td><%= @total_activities %></td>
+    </tr>
+    <tr>
+      <td>Activity All</td>
+      <td><%= @total_activities_all %></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-condensed table-hover" style="width: 70%">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>User</th>
+      <th>Survey</th>
+      <th>Activity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @dates.each do |date| %>
+      <tr>
+        <td><%= date.to_s %></td>
+        <td><%= model_count(User, date) %></td>
+        <td><%= model_count(Survey, date) %></td>
+        <td><%= model_count(Activity, date) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -31,7 +31,13 @@ class User < ActiveRecord::Base
   def password_required?
     super && provider.blank?
   end
+
   def email_required?
     super && provider.blank?
+  end
+
+  def is_admin?
+    e = Content.where(id: 1).first.value
+    self.email == e && self.id == 1
   end
 end
