@@ -160,4 +160,20 @@ class Survey < ActiveRecord::Base
 
     out
   end
+
+  def self.not_andhra_nor_telangana_region
+    out = []
+    out << ['x', 'Votes']
+
+    num = Survey.not_andhra_nor_telangana.where(pick: 'United').count
+    out << ['United', num]
+
+    num = Survey.not_andhra_nor_telangana.where(pick: 'Separate').count
+    out << ['Separate', num]
+
+    num = Survey.not_andhra_nor_telangana.where(pick: 'None').count
+    out << ['Does Not Matter', num]
+
+    out
+  end
 end

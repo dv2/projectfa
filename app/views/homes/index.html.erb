@@ -15,6 +15,35 @@
 
 <hr>
 
+<%# if current_user && current_user.is_admin? %>
+  <div class='row' style="text-align: center"><h2>By Region (in the last 24 hours)</h2></div>
+  <div class='row-fluid'>
+    <div class='span4'>
+      <div id="piechart_telangana_region" style="width: 500px; height: 300px;"></div>
+      <%= render 'common/piechart', 
+            chart_data: @piechart_telangana_region, 
+            container: 'piechart_telangana_region',
+            title: 'People from Telangana'  %>
+    </div>
+    <div class='span4'>
+      <div id="piechart_andhra_region" style="width: 500px; height: 300px;"></div>
+      <%= render 'common/piechart', 
+            chart_data: @piechart_andhra_region, 
+            container: 'piechart_andhra_region',
+            title: 'People from Andhra'  %>
+    </div>
+    <div class='span4'>
+      <div id="piechart_not_andhra_nor_telangana_region" style="width: 500px; height: 300px;"></div>
+      <%= render 'common/piechart', 
+            chart_data: @piechart_not_andhra_nor_telangana_region, 
+            container: 'piechart_not_andhra_nor_telangana_region',
+            title: 'People Outside Andhra Pradesh'  %>
+    </div>
+  </div>
+<%# end %>
+
+<hr>
+
 <div class='row' style="text-align: center"><h2>By Gender</h2></div>
 <div class='row-fluid'>
   <div class='span6'>
@@ -72,24 +101,4 @@
           title: 'People Outside Andhra Pradesh'  %>
   </div>
 </div>
-
-<% if current_user && current_user.is_admin? %>
-  <div class='row' style="text-align: center"><h2>By Region</h2></div>
-  <div class='row-fluid'>
-    <div class='span6'>
-      <div id="piechart_telangana_region" style="width: 500px; height: 300px;"></div>
-      <%= render 'common/piechart', 
-            chart_data: @piechart_telangana_region, 
-            container: 'piechart_telangana_region',
-            title: 'People from Telangana'  %>
-    </div>
-    <div class='span6'>
-      <div id="piechart_andhra_region" style="width: 500px; height: 300px;"></div>
-      <%= render 'common/piechart', 
-            chart_data: @piechart_andhra_region, 
-            container: 'piechart_andhra_region',
-            title: 'People from Andhra'  %>
-    </div>
-  </div>
-<% end %>
 
