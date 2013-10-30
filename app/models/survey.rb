@@ -8,6 +8,11 @@ class Survey < ActiveRecord::Base
   validates :india_state, presence: true, if: :india?
   validates :ap_district, presence: true, if: :ap_state?
 
+  scope :telangana, -> { where(ap_district: ApDistrict.telangana_districts, text: nil)}
+  scope :andhra, -> { where(ap_district: ApDistrict.andhra_districts, text: nil )}
+  scope :andhra_and_telangana, -> { where(ap_district: ApDistrict.andhra_and_telangana_districts, text: nil)}
+  scope :not_andhra_nor_telangana, -> { where.not(ap_district: ApDistrict.andhra_and_telangana_districts, text: nil)}
+
   def india?
     self.country == 'India'
   end
@@ -120,6 +125,38 @@ class Survey < ActiveRecord::Base
     total = Survey.where(pick: 'None').count
     num = Survey.where(india_state: india_state, pick: 'None').count
     out << ['Does Not Matter', total - num]
+
+    out
+  end
+
+  def self.andhra_region
+    out = []
+    out << ['x', 'Votes']
+
+    num = Survey.andhra.where(pick: 'United').count
+    out << ['United', num]
+
+    num = Survey.andhra.where(pick: 'Separate').count
+    out << ['Separate', num]
+
+    num = Survey.andhra.where(pick: 'None').count
+    out << ['Does Not Matter', num]
+
+    out
+  end
+
+  def self.telangana_region
+    out = []
+    out << ['x', 'Votes']
+
+    num = Survey.telangana.where(pick: 'United').count
+    out << ['United', num]
+
+    num = Survey.telangana.where(pick: 'Separate').count
+    out << ['Separate', num]
+
+    num = Survey.telangana.where(pick: 'None').count
+    out << ['Does Not Matter', num]
 
     out
   end

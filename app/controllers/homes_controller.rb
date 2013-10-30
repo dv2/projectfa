@@ -12,8 +12,10 @@ class HomesController < ApplicationController
     @piechart_state_andhra_pradesh = Survey.state_data_ap
     @piechart_state_not_andhra_pradesh = Survey.state_data_not_ap
 
-    # @piechart_district_andhra = Survey.district_data_andhra
-    # @piechart_district_telangana = Survey.district_data_not_andhra
+    if current_user && current_user.is_admin?
+      @piechart_telangana_region = Survey.telangana_region
+      @piechart_andhra_region = Survey.andhra_region
+    end
 
     Activity.create_activity(request, params, current_user)
   end
