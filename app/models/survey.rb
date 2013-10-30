@@ -11,7 +11,7 @@ class Survey < ActiveRecord::Base
   scope :telangana, -> { where(ap_district: ApDistrict.telangana_districts, text: nil)}
   scope :andhra, -> { where(ap_district: ApDistrict.andhra_districts, text: nil )}
   scope :andhra_and_telangana, -> { where(ap_district: ApDistrict.andhra_and_telangana_districts, text: nil)}
-  scope :not_andhra_nor_telangana, -> { where.not(ap_district: ApDistrict.andhra_and_telangana_districts, text: nil)}
+  scope :not_andhra_nor_telangana, -> { where(ap_district: '', text: nil)}
 
   def india?
     self.country == 'India'
