@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_one :survey
+  has_one :survey, dependent: :destroy
   has_many :activities
   
   # Include default devise modules. Others available are:
