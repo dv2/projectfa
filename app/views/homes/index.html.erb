@@ -5,7 +5,7 @@
 <div class='row-fluid'>
   <div class='span4'></div>
   <div class='span6'>
-    <div id="piechart_overall" style="width: 500px; height: 300px;"></div>
+    <div id="piechart_overall" class="piechart"></div>
     <%= render 'common/piechart', 
           chart_data: @piechart_overall, 
           container: 'piechart_overall',
@@ -19,21 +19,21 @@
   <div class='row' style="text-align: center"><h2>By Region (in the last 24 hours)</h2></div>
   <div class='row-fluid'>
     <div class='span4'>
-      <div id="piechart_telangana_region" style="width: 500px; height: 300px;"></div>
+      <div id="piechart_telangana_region" class="piechart"></div>
       <%= render 'common/piechart', 
             chart_data: @piechart_telangana_region, 
             container: 'piechart_telangana_region',
             title: 'People from Telangana'  %>
     </div>
     <div class='span4'>
-      <div id="piechart_andhra_region" style="width: 500px; height: 300px;"></div>
+      <div id="piechart_andhra_region" class="piechart"></div>
       <%= render 'common/piechart', 
             chart_data: @piechart_andhra_region, 
             container: 'piechart_andhra_region',
             title: 'People from Andhra'  %>
     </div>
     <div class='span4'>
-      <div id="piechart_not_andhra_nor_telangana_region" style="width: 500px; height: 300px;"></div>
+      <div id="piechart_not_andhra_nor_telangana_region" class="piechart"></div>
       <%= render 'common/piechart', 
             chart_data: @piechart_not_andhra_nor_telangana_region, 
             container: 'piechart_not_andhra_nor_telangana_region',
@@ -47,14 +47,14 @@
 <div class='row' style="text-align: center"><h2>By Gender</h2></div>
 <div class='row-fluid'>
   <div class='span6'>
-    <div id="piechart_gender_male" style="width: 500px; height: 300px;"></div>
+    <div id="piechart_gender_male" class="piechart"></div>
     <%= render 'common/piechart', 
           chart_data: @piechart_gender_data_male, 
           container: 'piechart_gender_male',
           title: 'Male'  %>
   </div>
   <div class='span6'>
-    <div id="piechart_gender_female" style="width: 500px; height: 300px;"></div>
+    <div id="piechart_gender_female" class="piechart"></div>
     <%= render 'common/piechart', 
           chart_data: @piechart_gender_data_female, 
           container: 'piechart_gender_female',
@@ -67,14 +67,14 @@
 <div class='row' style="text-align: center"><h2>By Country</h2></div>
 <div class='row-fluid'>
   <div class='span6'>
-    <div id="piechart_country_india" style="width: 500px; height: 300px;"></div>
+    <div id="piechart_country_india" class="piechart"></div>
     <%= render 'common/piechart', 
           chart_data: @piechart_country_india, 
           container: 'piechart_country_india',
           title: 'Within India'  %>
   </div>
   <div class='span6'>
-    <div id="piechart_country_not_india" style="width: 500px; height: 300px;"></div>
+    <div id="piechart_country_not_india" class="piechart"></div>
     <%= render 'common/piechart', 
           chart_data: @piechart_country_not_india, 
           container: 'piechart_country_not_india',
@@ -87,14 +87,14 @@
 <div class='row' style="text-align: center"><h2>By State</h2></div>
 <div class='row-fluid'>
   <div class='span6'>
-    <div id="piechart_state_andhra_pradesh" style="width: 500px; height: 300px;"></div>
+    <div id="piechart_state_andhra_pradesh" class="piechart"></div>
     <%= render 'common/piechart', 
           chart_data: @piechart_state_andhra_pradesh, 
           container: 'piechart_state_andhra_pradesh',
           title: 'People from Andhra Pradesh'  %>
   </div>
   <div class='span6'>
-    <div id="piechart_state_not_andhra_pradesh" style="width: 500px; height: 300px;"></div>
+    <div id="piechart_state_not_andhra_pradesh" class="piechart"></div>
     <%= render 'common/piechart', 
           chart_data: @piechart_state_not_andhra_pradesh, 
           container: 'piechart_state_not_andhra_pradesh',
