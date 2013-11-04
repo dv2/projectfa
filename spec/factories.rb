@@ -18,4 +18,7 @@ FactoryGirl.define do
     india_state    "Andhra Pradesh"
     ap_district    "Krishan"
   end
+
+  factory :news_article do
+  end
 end

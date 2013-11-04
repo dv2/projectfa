@@ -21,3 +21,12 @@ feature 'View the home page' do
   #   expect(page).to have_content('Suggestions? Contact me: spaceonce@gmail.com')
   # end
 end
+
+feature 'View the news articles' do
+  scenario 'user sees news articles section -- when NOT LOGGED IN' do
+    visit root_path
+    # expect(page).to have_content('Related News/Links')
+    # expect(page).to have_css('li.news_link')
+  end
+  scenario 'user sees news articles section -- when LOGGED IN'
+end

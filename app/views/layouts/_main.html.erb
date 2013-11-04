@@ -1,0 +1,24 @@
+<div class="jumbotron" style="background-color: #eeeeee">
+  <p><a href="https://www.facebook.com/sharer/sharer.php?u=www.futureandhra.com" target="_blank">Share on Facebook</a></p>
+  <h2>United Andhra Vs Telangana!</h2>
+  <p class="lead">
+    We have been collecting the opinion of the people regarding United Andhra or Separate Telangana and here is the information we've collected so far.<br />
+    <b>Your opinion counts! Please vote and let your voice be heard.</b> 
+    <br />(It takes less than 1 minute for you to vote.)
+  </p>
+
+  <% if current_user && already_voted? %>
+    <%= render 'surveys/survey_show' %>
+  <% elsif current_user %>
+    <p><%= link_to 'Vote by clicking here!', new_survey_path, class: 'btn btn-lg btn-success' %></p>
+  <% else %>
+    <p><%= link_to 'Vote by clicking here!', new_user_registration_path, class: 'btn btn-lg btn-success' %></p>
+  <% end %>
+</div>
+
+<div class="content">
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <%= yield %>
+</div>

@@ -38,6 +38,7 @@ end
 gem 'awesome_print'
 gem 'country_select'
 gem 'devise'
+gem "mechanize", "~> 2.7.2"
 
 gem 'bootstrap-sass', '~> 3.0.0.0.rc'
 # gem "bootstrap-sass", "~> 2.3.2.2"
