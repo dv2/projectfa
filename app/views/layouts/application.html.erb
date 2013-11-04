@@ -9,57 +9,9 @@
   <body>
 
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><%= link_to 'Home', root_path %></li>
-          <% if user_signed_in? %>
-<!--             <li>Logged in as <strong><%= current_user.email %></strong>.
-            <%= link_to 'Edit profile', edit_user_registration_path %></li> -->
-            <li style="padding-top: 8px"><b><%= display_logged_in_info %></b></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %><li>
-            <% if current_user.is_admin? %>
-              <li><%= link_to "Activities", admin_activities_path %><li>
-            <% end %>
-          <% else %>
-            <li><%= link_to "Sign up", new_user_registration_path %></li>
-            <li><%= link_to "Login", new_user_session_path %></li>
-          <% end %>
-        </ul>
-        <p><%= link_to image_tag('fa2.png', width: '80'), root_path %></p>
-      </div>
-
-      <div class="jumbotron" style="background-color: #eeeeee">
-          <p>
-            <a href="https://www.facebook.com/sharer/sharer.php?u=www.futureandhra.com" target="_blank">Share on Facebook</a>
-          </p>
-        <h1>Andhra Vs Telangana!</h1>
-        <p class="lead">
-          We have been collecting the opinion of the people regarding United Andhra or Separate Telangana and here is the information we've collected so far.
-          <br />
-          <b>Your opinion counts! Please vote and let your voice be heard.</b> 
-          <br />(It takes less than 1 minute for you to vote.)
-        </p>
-
-        <% if current_user && already_voted? %>
-          <%= render 'surveys/survey_show' %>
-        <% elsif current_user %>
-          <p><%= link_to 'Vote by clicking here!', new_survey_path, class: 'btn btn-lg btn-success' %></p>
-        <% else %>
-          <p><%= link_to 'Vote by clicking here!', new_user_registration_path, class: 'btn btn-lg btn-success' %></p>
-        <% end %>
-      </div>
-
-      <div class="content">
-        <% flash.each do |key, value| %>
-          <div class="alert alert-<%= key %>"><%= value %></div>
-        <% end %>
-        <%= yield %>
-      </div>
-
-      <div class="footer">
-        <p>&copy; WaltApps <%= Date.today.year %></p>
-        <p class='pull-right'>Suggestions? Contact me: <b>spaceonce@gmail.com</b></p>
-      </div>
+      <%= render 'layouts/header' %>
+      <%= render 'layouts/content' %>
+      <%= render 'layouts/footer' %>
     </div>
 
   </body>
