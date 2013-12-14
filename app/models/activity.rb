@@ -13,8 +13,6 @@ class Activity < ActiveRecord::Base
     logger.info "http_referer     : #{request.env['HTTP_REFERER']}"
     logger.info "user_id          : #{user_id}"
 
-                    # context: params.to_s,
-
     Activity.create(action: action,
                     request_remote_ip: request.remote_ip,
                     context: '',
