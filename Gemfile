@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
 
 gem 'rails', '4.0.0'
 
@@ -22,7 +21,7 @@ end
 group :development, :test do 
   gem 'rspec-rails', '~> 2.14.0'
   gem 'capybara', '~> 2.1.0'
-  gem 'debugger'
+  # gem 'debugger'
   gem 'simplecov'
 end
 
